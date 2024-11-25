@@ -303,14 +303,13 @@ h3{
   position: absolute;
   top: 0;
   left: 50%;
-  transform-origin: 0 50px; /* Radius of the circle */
-  font-size: 4px; /* Adjust font size */
+  transform-origin: 0 50px; 
+  font-size: 4px;
   font-weight: 700;
 }
 
-/* In your global CSS file or within the component's styles */
 .neon-shadow {
-  color: #0DA4F5; /* Main text color (blue-400 from Tailwind) */
+  color: #0DA4F5; 
   text-shadow:
           0 0 1px #0DA4F5,    /* Inner glow */
           0 0 10px #0DA4F5,   /* Mid glow */
@@ -333,7 +332,7 @@ h3{
 }
 
 .neon-shadow-white {
-  color: #0DA4F5; /* Main text color (blue-400 from Tailwind) */
+  color: #0DA4F5; 
   text-shadow:
           0 0 3px white,    /* Inner glow */
           0 0 10px #0DA4F5,   /* Mid glow */
@@ -342,7 +341,7 @@ h3{
 }
 
 .shadow-white {
-  color: white; /* Main text color (blue-400 from Tailwind) */
+  color: white;
   box-shadow:
           0 0 10px white,    /* Inner glow */
           0 0 10px white,   /* Mid glow */
@@ -350,10 +349,10 @@ h3{
           0 0 0px white;   /* Extended glow */
 }
 .shadow-white-text{
-  color: white; /* Main text color (blue-400 from Tailwind) */
+  color: white; 
   text-shadow:
-          0 0 0px white,    /* Inner glow */
-          0 0 0px white,   /* Mid glow */
-          0 0 10px white,   /* Outer glow */
-          0 0 50px white;   /* Extended glow */
+          0 0 0px white,  
+          0 0 0px white, 
+          0 0 10px white,   
+          0 0 50px white;   
 }
