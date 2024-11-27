@@ -13,9 +13,9 @@ const NextStepPage = () => {
     const [items, setItems] = useState<string[]>([]);
     useEffect(() => {
         if (selectedData?.items) {
-            setItems(selectedData.items); // Populate items once the data is available
+            setItems(selectedData.items); 
         }
-    }, [selectedData]); // Only run when selectedData changes
+    }, [selectedData]); 
     return (
         <div className="max-container pt-70 pb-10 ">
             <div className="max-w-[642px]">
