@@ -24,8 +24,8 @@ export const ButtonCircle = () => {
 
 export const LeaveRequestLink = () => {
     return (
-        <Link href="/" className="underline">
-            <p className="text-white font-bold">Оставить заявку</p>
+        <Link href="/" className="underline  ">
+            <p className="text-white font-bold lg:text-xs">Оставить заявку</p>
             {/* <Image src={leaveRequestIcon} alt="request image" /> */}
         </Link>
     );
@@ -34,24 +34,41 @@ export const LeaveRequestLink = () => {
 export const ScrollDownRoundedShape = (props) => {
     return (
         <div className="relative w-full h-full flex items-center justify-center lg:hidden">
-            <div className="absolute ">
+            {/* Image Centered */}
+            <div className="absolute flex items-center justify-center">
                 <Image
-                    src={props.imageType==="scrollDownOvalShape"?scrollDownIcon : arrowDownIcon}
+                    src={
+                        props.imageType === "scrollDownOvalShape"
+                            ? scrollDownIcon
+                            : arrowDownIcon
+                    }
                     alt="Scroll down icon"
+                    className="w-10 h-10" // Adjust size as needed
                 />
             </div>
 
-            <div className="circle-text"
-                 style={{ color: props.RoundedtextColor }}
+            {/* Circular Text */}
+            <div
+                className="circle-text"
+                style={{ color: props.RoundedtextColor }}
             >
-
-                {Array.from("LoremipsumdolorsitametconsecteturadipiscingelitLoremIpsumnerasitfauleapeslinbanannokkorochinmayoshiznibilmadimuzurhappybierthdaytoyou").map((char, index) => (
-                    <span key={index} style={{   transform: `rotate(${-index * 3}deg)`, }}>{char}</span>
+                {Array.from(
+                    "LoremipsumdolorsitametconsecteturadipiscingelitLoremIpsumnerasitfauleapeslinbanannokkorochinmayoshiznibilmadimuzurhappybierthdaytoyou"
+                ).map((char, index) => (
+                    <span
+                        key={index}
+                        style={{
+                            transform: `rotate(${-index * 3}deg)`,
+                        }}
+                    >
+                        {char}
+                    </span>
                 ))}
             </div>
         </div>
     );
 };
+
 
 interface SkyLineLogoButtonProps {
     wCircle: 'small' | 'medium' | 'large';
@@ -85,27 +102,27 @@ interface SkyLineLogoButtonProps {
 }
 
 export const SkyLineLogoButton: React.FC<SkyLineLogoButtonProps> = ({
-                                                                        wCircle,
-                                                                        hCircle,
-                                                                        borCircle,
-                                                                        wRectangle,
-                                                                        hRectangle,
-                                                                        borRectangle,
-                                                                        hLine,
-                                                                        gapText,
-                                                                        sizeTitle,
-                                                                        sizeDesc,
-                                                                        gapAll,
-                                                                        role = "default",
+    wCircle,
+    hCircle,
+    borCircle,
+    wRectangle,
+    hRectangle,
+    borRectangle,
+    hLine,
+    gapText,
+    sizeTitle,
+    sizeDesc,
+    gapAll,
+    role = "default",
                                                                     }) => {
     // Utility variants
     const circleWidthVariants = {
-        small: "w-[18px]",
+        small: "w-[18px]  lg:w-[14px]",
         medium: "w-[50px] lg:w-[30px] ",
     };
 
     const circleHeightVariants = {
-        small: "h-[18px]",
+        small: "h-[18px] lg:h-[14px]",
         medium: "h-[50px] lg:h-[30px]",
     };
 
@@ -115,12 +132,12 @@ export const SkyLineLogoButton: React.FC<SkyLineLogoButtonProps> = ({
     };
 
     const rectangleWidthVariants = {
-        small: "w-[7.2px]",
+        small: "w-[7.2px] lg:w-[5.7px]",
         medium: "w-[20px] lg:w-[12px]",
     };
 
     const rectangleHeightVariants = {
-        small: "h-[7.2px]",
+        small: "h-[7.2px] lg:h-[5.7px]",
         medium: "h-[20px] lg:h-[12px]",
     };
 
@@ -130,7 +147,7 @@ export const SkyLineLogoButton: React.FC<SkyLineLogoButtonProps> = ({
     };
 
     const lineHeightVariants = {
-        short: "h-[20px]",
+        short: "h-[calc(100%-5px)]",
         medium: "h-[60px]",
     };
 
@@ -140,7 +157,7 @@ export const SkyLineLogoButton: React.FC<SkyLineLogoButtonProps> = ({
     };
 
     const titleSizeVariants = {
-        sm: "text-[5px]",
+        sm: "text-[5px] lg:text-[4px] ",
         md: "text-sm",
     };
 
@@ -150,7 +167,7 @@ export const SkyLineLogoButton: React.FC<SkyLineLogoButtonProps> = ({
     };
 
     const gapAllVariants = {
-        small: "gap-[5px]",
+        small: "gap-[5px] lg:gap-1",
         medium: "gap-6",
     };
 
@@ -159,7 +176,7 @@ export const SkyLineLogoButton: React.FC<SkyLineLogoButtonProps> = ({
     return (
         <div className={`flex ${gapAllVariants[gapAll]}`}>
             <div
-                className={`rounded-full flex items-center justify-center neon-shadow-box blur-[0.5px] border-blue-main ${circleWidthVariants[wCircle]} ${circleHeightVariants[hCircle]} ${borderCircleVariants[borCircle]}`}
+                className={`my-auto rounded-full flex items-center justify-center neon-shadow-box blur-[0.5px] border-blue-main ${circleWidthVariants[wCircle]} ${circleHeightVariants[hCircle]} ${borderCircleVariants[borCircle]}`}
             >
                 <div
                     className={`rotate-45 neon-shadow-box border-blue-main ${rectangleWidthVariants[wRectangle]} ${rectangleHeightVariants[hRectangle]} ${borderRectangleVariants[borRectangle]}`}
@@ -167,10 +184,10 @@ export const SkyLineLogoButton: React.FC<SkyLineLogoButtonProps> = ({
             </div>
 
             <div
-                className={`${roleClass} bg-blue-main neon-shadow-box ${lineHeightVariants[hLine]} w-[1px]`}
+                className={`${roleClass} bg-blue-main neon-shadow-box ${lineHeightVariants[hLine]} w-[1px] my-auto`}
             ></div>
 
-            <div className={`${roleClass} flex-col ${gapTextVariants[gapText]} my-auto`}>
+            <div className={`${roleClass} flexCol ${gapTextVariants[gapText]} my-auto`}>
                 <h1 className={`neon-shadow bold-500 text-center ${titleSizeVariants[sizeTitle]}`}>
                     SKYLINE DIGITAL
                 </h1>

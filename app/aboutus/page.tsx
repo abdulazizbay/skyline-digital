@@ -18,8 +18,8 @@ export default function AboutUs(){
             <FaceOfCompany/>
             <AgencyServices/>
             <Principles/>
-            <div className="py-100">
-                <ContactForm/>
+            <div className="py-50">
+                <ContactForm role="home"/>
             </div>
 
         </>

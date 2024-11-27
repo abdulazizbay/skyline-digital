@@ -72,7 +72,7 @@ const config: Config = {
     		},
     		screens: {
 				sm: {'max': '640px'},
-				md: {'max': '768'},
+				md: {'max': '768px'},
 				lg: {'max': '1024px'},
 				xl: '1280px',
 				'2xl': '1536px',
@@ -100,6 +100,7 @@ const config: Config = {
     		width: {
     			'50': '50px',
     			'100': '100px',
+    			'200': '200px',
     			'250': '250px',
     			'300': '300px',
     			'400': '400px',

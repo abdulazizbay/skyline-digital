@@ -30,6 +30,11 @@ import swiftIcon from "../app/assets/images/SwiftIcon.svg"
 import cplusIcon from "../app/assets/images/CplusIcon.svg"
 import cSharpIcon from "../app/assets/images/cSharpIcon.svg"
 import javaIcon from "../app/assets/images/javaIcon.svg"
+import expertiseIcon from "@/app/assets/images/Expertise.svg";
+import databaseIcon from "@/app/assets/images/databasecloud.svg";
+import cnnIcon from "@/app/assets/images/CNN.svg";
+import HighScalIcon from "@/app/assets/images/HighScalability.svg";
+import openSourceIcon from "@/app/assets/images/Opensourceprojects.svg";
 
 
 export const NAV_LINKS = [
@@ -237,3 +242,11 @@ export const SERVICESINFO = [
     ],
 
 ]
+
+export const AGENCYSERVICESCHOICES = [
+    { image: expertiseIcon, label: "Веб-дизайн", label2: "UI/UX", text: "Создаем стильные и функциональные веб-сайты, которые привлекают внимание и удобны в использовании. Будь то корпоративный сайт, блог или портфолио – ваш сайт будет выделяться" },
+    { image: databaseIcon, label: "Веб-разработка", label2: "Backend", text: "Превращаем ваши идеи в реальность. Мы разрабатываем уникальные веб-решения, оставляющие впечатление." },
+    { image: cnnIcon, label: "Аналитика", label2: "Big Data", text: "Современный подход к анализу данных и решений, отличающихся красотой и функциональностью." },
+    { image: HighScalIcon, label: "Масштабируемость", label2: "High Scalability", text: "Уникальные решения для бизнеса. Мы создаем адаптивные сайты, которые выглядят великолепно." },
+    { image: openSourceIcon, label: "Open Source", label2: "Сообщество", text: "Дизайн, который говорит за вас. Воплощаем желания в дизайне, отражающем ваш бренд." },
+];

@@ -6,34 +6,45 @@ import React from "react";
 
 export const Banner = () => {
     return (
-        <div className="max-container flex pt-24 gap-36">
-            {/* Left Section */}
-            <div>
-                <Image width={400} height={415} src={bannerImage} alt="banner image" />
-                <div className="mt-200 float-left">
-                    <ScrollDownRoundedShape
-                        RoundedtextColor="#0DA4F5"
-                        imageType="scrollDownOvalShape"
+        <div className="max-container  pt-24 ">
+            <div className="flex gap-[136px]  lg:gap-6">
+                <div className=" ">
+                    <Image
+                        // width={400}
+                        // height={415}
+                        src={bannerImage}
+                        alt="banner image"
+                        className=" w-400  "
                     />
                 </div>
-            </div>
-
-            <div className="flexCol ">
-                <div>
-                    <div className="text-4xl font-bold">
+                <div className="justify-center my-auto">
+                    <h1 className="text-4xl bold-700 lg:text-base">
                         <span className="text-blue-400">SKYLINE</span> - это исключительна уникальная кампания
-                    </div>
-                    <div className="text-xl leading-6 pt-5 ">
+                    </h1>
+                    <div className="text-xl pt-5 lg:text-xs lg:pt-1.5">
                         Lorem ipsum dolor sit amet consectetur.
                         Faucibus euismod eget tortor maecenas.
                         Erat nisi purus a aliquet habitant placerat.
                     </div>
                 </div>
 
-                <div className="flex justify-end pt-[144px]">
+            </div>
+
+            <div className="flex justify-between items-center">
+                {/* ScrollDownRoundedShape on the left */}
+                <div className="pt-[217px] flex-shrink-0">
+                    <ScrollDownRoundedShape
+                        RoundedtextColor="#0DA4F5"
+                        imageType="scrollDownOvalShape"
+                    />
+                </div>
+
+                {/* ButtonCircle on the right */}
+                <div className="flex justify-end mt-7 lg:pt-16 flex-grow">
                     <ButtonCircle />
                 </div>
             </div>
+
         </div>
     );
 };

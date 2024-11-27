@@ -2,21 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import expertiseIcon from "@/app/assets/images/Expertise.svg";
-import databaseIcon from "@/app/assets/images/databasecloud.svg";
-import cnnIcon from "@/app/assets/images/CNN.svg";
-import HighScalIcon from "@/app/assets/images/HighScalability.svg";
-import openSourceIcon from "@/app/assets/images/Opensourceprojects.svg";
 import BracketsIcon from "@/app/assets/images/brackets.svg";
-import React from "react"
+import React from "react";
+import {AGENCYSERVICESCHOICES as choices } from "@/constants/index"
 
-const choices = [
-    { image: expertiseIcon, label: "Веб-дизайн", label2: "UI/UX", text: "Создаем стильные и функциональные веб-сайты, которые привлекают внимание и удобны в использовании. Будь то корпоративный сайт, блог или портфолио – ваш сайт будет выделяться" },
-    { image: databaseIcon, label: "Веб-разработка", label2: "Backend", text: "Превращаем ваши идеи в реальность. Мы разрабатываем уникальные веб-решения, оставляющие впечатление." },
-    { image: cnnIcon, label: "Аналитика", label2: "Big Data", text: "Современный подход к анализу данных и решений, отличающихся красотой и функциональностью." },
-    { image: HighScalIcon, label: "Масштабируемость", label2: "High Scalability", text: "Уникальные решения для бизнеса. Мы создаем адаптивные сайты, которые выглядят великолепно." },
-    { image: openSourceIcon, label: "Open Source", label2: "Сообщество", text: "Дизайн, который говорит за вас. Воплощаем желания в дизайне, отражающем ваш бренд." },
-];
 
 const iconPositions = [
     { position: "top-0 left-0", index: 0 },
@@ -33,45 +22,56 @@ export const AgencyServices = () => {
     };
 
     return (
-        <div className="max-container pt-150">
-            <p className="text-2xl font-bold">Услуги агентства</p>
-            <div className="mt-2 w-[63px] h-[2px] bg-white"></div>
+        <div className="max-container pt-150 lg:pt-50">
+                <div className="text-2xl font-bold lg:text-xs inline-block">
+                    Услуги агентства
+                    <div className="mt-2  h-[2px] bg-white w-2/5"></div>
+                </div>
 
-            <div className="relative w-full mt-100">
-                {iconPositions.map(({ position, index }) => (
-                    <div
-                        key={index}
-                        className={`absolute ${position} cursor-pointer flexCenter w-[70px] h-[70px] bg-gray2 rounded-[24px] blur-[1px]`}
-                        onClick={() => handleClick(index)}
-                    >
-                        <Image src={choices[index].image} alt={choices[index].label} width={42} height={42} />
-                    </div>
-                ))}
 
-                <div className="flexCol items-center text-center">
-                    <div className="flex space-x-1">
-                        <Image src={BracketsIcon} alt="Brackets Icon" />
-                        <Image src={BracketsIcon} alt="Brackets Icon" />
-                    </div>
-                    <p className="bold-700 mt-5 w-[550px]">{choices[centerIndex].text}</p>
-                    <div className="w-[100px] h-[100px] bg-gray2 rounded-[24px] flexCenter mt-6">
-                        <Image src={choices[centerIndex].image} alt={choices[centerIndex].label} width={42} height={42} />
-                    </div>
-                    <p className="bold-700 mt-5">{choices[centerIndex].label}</p>
-                    <p className="bold-700 mt-2.5">{choices[centerIndex].label2}</p>
-                    <div className="flex space-x-2 mt-8">
-                        {choices.map((_, index) => (
-                            <span
-                                key={index}
-                                className={`h-2.5 w-2.5 rounded-full border-[1px] cursor-pointer border-blue-main ${
-                                    index === centerIndex ? "bg-blue-600" : ""
-                                }`}
-                                onClick={() => handleClick(index)}
+
+        <div className="relative w-full mt-100 lg:mt-8">
+                    {iconPositions.map(({ position, index }) => (
+                        <div
+                            key={index}
+                            className={`absolute ${position} cursor-pointer flexCenter w-[70px] h-[70px] bg-gray2 blur-[1px] lg:w-6 lg:h-6`}
+                            onClick={() => handleClick(index)}
+                            style={{ borderRadius: '25%' }}
+                        >
+                            <Image src={choices[index].image} alt={choices[index].label} width={42} height={42}
+                                className="lg:w-[14px] lg:h-[14px]"
                             />
-                        ))}
+                        </div>
+                    ))}
+
+                    <div className="flexCol items-center text-center ">
+                        <div className="flex space-x-1">
+                            <Image src={BracketsIcon} alt="Brackets Icon" className="lg:w-[6px] lg:h-2.5"/>
+                            <Image src={BracketsIcon} alt="Brackets Icon"  className="lg:w-[6px] lg:h-2.5"/>
+                        </div>
+                        <div className="mt-5 w-[550px]   md:w-200">
+                            <p className="bold-700  lg:text-xs">{choices[centerIndex].text}</p>
+                        </div>
+
+                        <div className="w-[100px] h-[100px] bg-gray2  flexCenter mt-6 lg:w-[34px] lg:h-[34px]" style={{ borderRadius: '25%' }}>
+                            <Image src={choices[centerIndex].image} alt={choices[centerIndex].label} width={42} height={42}
+                                   className="lg:w-[14px] lg:h-[14px]"
+                            />
+                        </div>
+                        <p className="bold-700 mt-5 lg:text-xs">{choices[centerIndex].label}</p>
+                        <p className="bold-700 mt-2.5 lg:text-xs">{choices[centerIndex].label2}</p>
+                        <div className="flex space-x-2 mt-8">
+                            {choices.map((_, index) => (
+                                <span
+                                    key={index}
+                                    className={`h-2.5 w-2.5 rounded-full border-[1px] cursor-pointer border-blue-main lg:w-1  lg:h-1 ${index === centerIndex ? "bg-blue-600" : ""}`}
+                                    onClick={() => handleClick(index)}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
     );
 };

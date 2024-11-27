@@ -9,9 +9,9 @@ import arrowScroll from "@/app/assets/images/arrowScroll.svg";
 export const KnowingLang = () => {
     return (
         <div className="max-container pt-150 lg:pt-100">
-            <div className="flexCol gap-[50px] font-Inter overflow-x-auto whitespace-nowrap ">
+            <div className="flexCol gap-[50px] font-Inter lg:overflow-x-auto  ">
                 {KNOWINGLANGINFO.map((item, index) => (
-                    <div key={index} className="inline-block gap-6 min-w-[250px]">
+                    <div key={index} className="flex gap-6 min-w-[250px]">
                         <div className="w-[250px] lg:hidden">
                             <h6 className="bold-700">{item.label}</h6>
                             <p className="text-base pt-6">{item.desc}</p>

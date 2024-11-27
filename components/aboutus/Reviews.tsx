@@ -5,13 +5,13 @@ import {
     CarouselContent,
     CarouselItem,
 } from "@/components/ui/carousel";
-import { REVIEWSINFO } from "../../constants";
+import { REVIEWSINFO } from "@/constants";
 import Autoplay from "embla-carousel-autoplay"
 import {SkyLineLogoButton} from "@/components/Buttons";
 export function Reviews() {
     return (
         <Carousel
-            className="w-[1090px] pt-100"
+            className="pt-100 lg:pt-50"
             plugins={[
                 Autoplay({
                     delay: 2000,
@@ -19,12 +19,12 @@ export function Reviews() {
                 }),
             ]}
         >
-            <CarouselContent className="flex gap-12 ">
+            <CarouselContent className="flex gap-50 lg:px-6">
                 {REVIEWSINFO.map((item, index) => (
-                    <CarouselItem key={index} className="flex-none w-[396px] h-[238px]">
+                    <CarouselItem key={index} className="flex-none w-[396px] h-[238px] lg:basis-full ">
                         <div>
                             <Card>
-                                <CardContent className="p-5 bg-black1 rounded-[24px]">
+                                <CardContent className="p-5 bg-black1 rounded-[24px] ">
                                     <div>
                                         <div className="flex justify-between">
                                             <SkyLineLogoButton
@@ -39,21 +39,22 @@ export function Reviews() {
                                                 sizeTitle="sm"
                                                 sizeDesc="xs"
                                                 gapAll="small"
+                                                role="aboutus"
                                             />
-                                            <div className="flex items-center gap-3.5">
-                                                <span className="text-base">{item.stars}.0</span>
+                                            <div className="flex items-center gap-3.5 ">
+                                                <span className="text-base text-xs">{item.stars}.0</span>
                                                 <Rating rating={item.stars} />
                                             </div>
                                         </div>
-                                        <p className="text-base pt-2.5 h-[95px] leading-5 overflow-hidden text-ellipsis">
+                                        <p className="text-base pt-2.5 h-[95px] leading-5 overflow-hidden text-ellipsis lg:text-xs lg:pt-5">
                                             {item.content}
                                         </p>
-                                        <div className="pt-10 flex justify-between relative">
+                                        <div className="pt-10 flex justify-between relative lg:pt-5 ">
                                             <div>
-                                                <h3 className="text-base">{item.author}</h3>
-                                                <p className="text-xs text-gray-500">{item.company}</p>
+                                                <h3 className="text-base lg:text-xs">{item.author}</h3>
+                                                <p className="text-xs text-gray-500 lg:text-[10px]">{item.company}</p>
                                             </div>
-                                            <p className="text-xs absolute bottom-0 right-0">{item.dateOfPost}</p>
+                                            <p className="text-xs absolute bottom-0 right-0 lg:text-[10px]">{item.dateOfPost}</p>
                                         </div>
                                     </div>
                                 </CardContent>
@@ -79,7 +80,7 @@ const Rating: React.FC<RatingProps> = ({ rating }) => {
                 const isFilled = index < rating;
 
                 return (
-                    <div key={index} className="relative w-5 h-5">
+                    <div key={index} className="relative w-5 h-5 lg:w-4 lg:h-4">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
