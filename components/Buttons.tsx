@@ -5,7 +5,6 @@ import Image from "next/image";
 import React from "react";
 import arrowDownIcon from "@/app/assets/images/arrowScroll.svg"
 import scrollDownIcon from "@/app/assets/images/bannerScrollIcon.svg";
-import {Button} from "@/components/ui/button";
 
 export const ButtonCircle = () => {
     return (
@@ -34,7 +33,6 @@ export const LeaveRequestLink = () => {
 export const ScrollDownRoundedShape = (props) => {
     return (
         <div className="relative w-full h-full flex items-center justify-center lg:hidden">
-            {/* Image Centered */}
             <div className="absolute flex items-center justify-center">
                 <Image
                     src={
@@ -43,11 +41,10 @@ export const ScrollDownRoundedShape = (props) => {
                             : arrowDownIcon
                     }
                     alt="Scroll down icon"
-                    className="w-10 h-10" // Adjust size as needed
+                    className="w-10 h-10"
                 />
             </div>
 
-            {/* Circular Text */}
             <div
                 className="circle-text"
                 style={{ color: props.RoundedtextColor }}

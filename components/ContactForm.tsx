@@ -38,7 +38,7 @@ export function ContactForm({role}) {
     const onSubmit = (data) => {
         console.log(data);
         form.reset({ username: "", email: "", termsAccepted: "",userMessage:"" })
-        router.push("/"); // Redirect to home after submission
+        router.push("/");
     };
 
     return (
