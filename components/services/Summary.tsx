@@ -20,13 +20,13 @@ export const Summary = () => {
         dispatch(removeItem(item));
     };
     return (
-        <div className="w-[376px] h-full  py-50 bg-blue5 px-6 bold-500 rounded-3xl">
-            <h4>Краткой содержание</h4>
+        <div className="w-[376px] h-auto  py-50 bg-blue5 px-6 bold-500 rounded-3xl lg:py-6 lg:px-4 md:mx-auto">
+            <h4 className="lg:text-2xl">Краткой содержание</h4>
             <div className="flex gap-2.5 items-center mt-30">
                 <Image src={lockIcon} alt="lock icon" />
-                <h6>$500-1000</h6>
+                <h6 className="text-base">$500-1000</h6>
             </div>
-            <div className="mt-6 grid grid-cols-2 gap-5">
+            <div className="mt-6 grid grid-cols-2 gap-5 lg:mt-5 lg:gap-4 ">
                 {items && items.length > 0 ? (
                     items.map((item, index) => (
                         <div
@@ -50,7 +50,7 @@ export const Summary = () => {
                 )}
             </div>
             <div className="mt-5 px-[25px] py-50 text-center bg-blue5 rounded-xl">
-                <p className="text-base bold-500">
+                <p className="text-base bold-500 ">
                     У вас уже есть<br/>
                     требования ? <span className="blue-main"><Link href="/">Закажите звонок</Link></span> для
                     подробного расчета

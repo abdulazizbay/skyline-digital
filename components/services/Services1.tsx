@@ -69,19 +69,18 @@ export const Services1 = () => {
     };
 
     return (
-        <div className="pt-150 pb-130 max-w-[1143px] mx-auto">
-            <h4>Выберите сервис</h4>
-            <Progress value={progress} className="w-[1090px] bg-gray4 mt-7" />
-
-            <div className="pt-100 flexBetween">
-                <div className="w-[717px]">
+        <div className="pt-150 pb-130 max-w-[1143px] mx-auto lg:pt-50 px-3">
+            <h4 className="lg:text-base">Выберите сервис</h4>
+            <Progress value={progress} className="w-full bg-gray4 mt-7 lg:mt-5 "/>
+            <div className="pt-100 flexBetween lg:pt-50 ">
+                <div className=" md:mx-auto">
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
                             <FormField
                                 control={form.control}
                                 name="items"
                                 render={() => (
-                                    <FormItem className="grid grid-cols-2 gap-[25px]">
+                                    <FormItem className="grid grid-cols-2 gap-[25px] xl:flexCol lg:gap-2.5 ">
                                         {(SERVICESINFO[dataInfo] || []).map((item) => (
                                             <FormField
                                                 key={item.label}
@@ -89,11 +88,11 @@ export const Services1 = () => {
                                                 name="items"
                                                 render={({ field }) => (
                                                     <FormItem
-                                                        className="flex gap-5 w-[346px] h-90 bg-[#0DA4F51A] rounded-[24px] items-center pl-[40px] cursor-pointer"
+                                                        className="flex gap-5  w-[346px] lg:h-[58px]  h-90 bg-[#0DA4F51A] rounded-[24px] items-center pl-[40px] cursor-pointer"
                                                     >
                                                         <FormControl>
                                                             <Checkbox
-                                                                className="rounded-full w-5 h-5 bg-gray5"
+                                                                className="rounded-full w-5 h-5 bg-gray5 lg:w-2.5 lg:h-2.5"
                                                                 checked={field.value?.includes(item.label)}
                                                                 onCheckedChange={(checked) => {
                                                                     return checked
@@ -107,7 +106,7 @@ export const Services1 = () => {
                                                             />
                                                         </FormControl>
                                                         <FormLabel>
-                                                            <h6 className="bold-500">{item.label}</h6>
+                                                            <h6 className="bold-500 lg:text-lg">{item.label}</h6>
                                                         </FormLabel>
                                                     </FormItem>
                                                 )}
@@ -124,8 +123,14 @@ export const Services1 = () => {
                         </form>
                     </Form>
                 </div>
+                <div className="md:hidden">
+                    <Summary />
+                </div>
 
-                <Summary />
+
+
+
+
             </div>
         </div>
     );
@@ -137,19 +142,19 @@ const NextPrevButton = ({ role, onClick }) => {
             {role === "next" ? (
                 <Button
                     type="submit"
-                    className="flexBetween px-[30px] w-[346px] h-[57px] rounded-[100px] bg-gradient-to-r from-[#00A6FF4D] via-[#00A6FF4D] to-[#00A6FF]"
+                    className="flexBetween px-[30px] w-[346px] lg:w-full  lg:h-10 h-[57px] rounded-[100px] bg-gradient-to-r from-[#00A6FF4D] via-[#00A6FF4D] to-[#00A6FF] lg:justify-center"
                 >
-                    <h6>Следующий этап</h6>
+                    <h6 className="lg:hidden ">Следующий этап</h6>
                     <Image src={rightArrowIcon} alt="right arrow" />
                 </Button>
             ) : (
                 <Button
                     type="button"
                     onClick={onClick}
-                    className="w-[232px] h-[68px] bg-[#00A6FF1A] rounded-[100px]"
+                    className="w-[232px]  lg:w-full lg:h-10 h-[68px] bg-[#00A6FF1A] rounded-[100px]"
                 >
                     <Image src={rightArrowIcon} alt="right arrow" className="rotate-180" />
-                    <h6>Назад</h6>
+                    <h6 className="lg:hidden ">Назад</h6>
                 </Button>
             )}
         </>

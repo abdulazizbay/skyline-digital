@@ -17,25 +17,28 @@ const NextStepPage = () => {
         }
     }, [selectedData]); 
     return (
-        <div className="max-container pt-70 pb-10 ">
-            <div className="max-w-[642px]">
-                <h4 className="bold-700 ">
+        <div className="max-container pt-70 pb-10 lg:pt-50">
+            <div className="max-w-[642px] sm:max-w-full">
+                <h4 className="bold-700 lg:text-xl">
                     Ваша персональная оценка почти завершена!
                 </h4>
-                <p className="bold-500 mt-10 leading-6">
+                <p className="bold-500 mt-10 leading-6 lg:text-base lg:mt-25">
                     Чтобы убедиться в его точности, у нас осталось всего несколько вопросов.
                     Заполните форму или
                     <span className="blue-main"><Link href="/"> Запланируйте звонок </Link></span>
                     прямо сейчас, чтобы начать свой проект без промедления
                 </p>
             </div>
-            <div className="mt-100 flexBetween ">
+            <div className="mt-100 flexBetween md:mt-50 md:block">
                 <Summary/>
                 <div>
-                    <ContactForm
-                        role="service"
-                    />
-                    <div className="mt-[90px] flex float-right ">
+                    <div className="w-[376px] mx-auto">
+                        <ContactForm
+                            role="service"
+                        />
+                    </div>
+
+                    <div className="mt-[90px] flex float-right md:hidden">
                         <ScrollDownRoundedShape />
                     </div>
 

@@ -74,7 +74,7 @@ const config: Config = {
 				sm: {'max': '640px'},
 				md: {'max': '768px'},
 				lg: {'max': '1024px'},
-				xl: '1280px',
+				xl: {'max': '1200px'},
 				'2xl': '1536px',
     		},
     		maxWidth: {
