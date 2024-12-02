@@ -44,11 +44,21 @@ export const Services1 = () => {
 
     const dispatch = useDispatch();
     const router = useRouter();
-
     const watchedItems = useWatch({ control: form.control, name: "items" });
 
     useEffect(() => {
-        dispatch(saveFormData({ items: watchedItems }));
+        const selectedItemsData = SERVICESINFO.flat().filter((item) =>
+            watchedItems.includes(item.label)
+        );
+
+        const totalPrice = selectedItemsData.reduce((sum, item) => sum + item.price, 0);
+        const totalTime = selectedItemsData.reduce((sum, item) => sum + item.takingTime, 0);
+
+        dispatch(saveFormData({
+            items: watchedItems,
+            totalPrice,
+            totalTime
+        }));
     }, [watchedItems, dispatch]);
 
     const onSubmit = (data: z.infer<typeof FormSchema>) => {
@@ -105,7 +115,7 @@ export const Services1 = () => {
                                                                 }}
                                                             />
                                                         </FormControl>
-                                                        <FormLabel>
+                                                        <FormLabel className="flex gap-4 items-center">
                                                             <h6 className="bold-500 lg:text-lg">{item.label}</h6>
                                                         </FormLabel>
                                                     </FormItem>

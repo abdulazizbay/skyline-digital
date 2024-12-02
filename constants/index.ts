@@ -214,31 +214,31 @@ export const QUESTIONSANSWERSINFO = [
 
 export const SERVICESINFO = [
     [
-        {label: "Образования", id: "education"},
-        {label: "Корпоративные", id: "corporation"},
-        {label: "Услуга", id: "service"},
-        {label: "Магазин", id: "market"},
-        {label: "Медтцина", id: "medication"},
-        {label: "Информационный", id: "informative"},
-        {label: "Другое", id: "other"}
+        {label: "Образования", id: "education", price: 200, takingTime: 2},
+        {label: "Корпоративные", id: "corporation", price: 200, takingTime: 2},
+        {label: "Услуга", id: "service", price: 200, takingTime: 2},
+        {label: "Магазин", id: "market", price: 200, takingTime: 2},
+        {label: "Медтцина", id: "medication", price: 200, takingTime: 2},
+        {label: "Информационный", id: "informative", price: 200, takingTime: 2},
+        {label: "Другое", id: "other", price: 200, takingTime: 2}
     ],
     [
-        {label: "Дизайн Сайта", id: "designSite"},
-        {label: "Создания сайта", id: "creation"},
-        {label: "Приложения", id: "app"},
-        {label: "Лого", id: "logo"},
-        {label: "Дизайн продукта", id: "designProduct"},
-        {label: "Редизайн", id: "redesign"},
-        {label: "Техподдержка", id: "techSupport"},
-        {label: "SEO", id: "seo"},
-        {label: "Другое", id: "other"}
+        {label: "Дизайн Сайта", id: "designSite", price: 200, takingTime: 2},
+        {label: "Создания сайта", id: "creation", price: 200, takingTime: 2},
+        {label: "Приложения", id: "app", price: 200, takingTime: 2},
+        {label: "Лого", id: "logo", price: 200, takingTime: 2},
+        {label: "Дизайн продукта", id: "designProduct", price: 200, takingTime: 2},
+        {label: "Редизайн", id: "redesign", price: 200, takingTime: 2},
+        {label: "Техподдержка", id: "techSupport", price: 200, takingTime: 2},
+        {label: "SEO", id: "seo", price: 200, takingTime: 2},
+        {label: "Другое", id: "other", price: 200, takingTime: 2}
     ],
     [
-        {label: "CRM", id: "crm"},
-        {label: "Аналитика", id: "analytics"},
-        {label: "ERP", id: "erp"},
-        {label: "Meta, Linkedln ", id: "ad"},
-        {label: "Другое", id: "other"}
+        {label: "CRM", id: "crm", price: 200, takingTime: 2},
+        {label: "Аналитика", id: "analytics", price: 200, takingTime: 2},
+        {label: "ERP", id: "erp", price: 200, takingTime: 2},
+        {label: "Meta, Linkedln ", id: "ad", price: 200, takingTime: 2},
+        {label: "Другое", id: "other", price: 200, takingTime: 2}
     ],
 
 ]
